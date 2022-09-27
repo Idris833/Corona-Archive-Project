@@ -1,18 +1,4 @@
-# SE-Sprint01-Team32
-
 # README for Corona Archive
-
-### Contributors
-
-Sprint 1
-
-- Abel Berhane Woldemariam
-- Anastasiia Skryzhadlovska
-
-Sprint 2
-
-- Idris Chendid
-- Ilayda Güner
 
 ## About the Project
 
@@ -50,8 +36,7 @@ archiving of the Corona infections in a particular location. The web service wil
             \--                     # Main HTML files
         \--sql
             \--                     # SQL Query used for initialization
-        \--tests
-            |--test_sprint1.py      # Main Testing Python Code
+        --test_sprint2.py      # Main Testing Python Code
         -- app.py                   # Main Python Code
         -- README.md
         -- requirements.txt         # Required flask dependencies to run this program
@@ -115,9 +100,6 @@ when running app.py add /home to start surfing on the website
 ```
 
 ### `db.yaml` file Format. Enter your respective credentials
-
-The production process was done on a local MySQL server. This may may work
-in CLAMV, however the local server is suggested. 
 
 ```yaml
 mysql_host: "localhost"
@@ -208,7 +190,3 @@ $ python3 test_sprint2.py
 ✅ Improved the user interface and added another "agent" into the database for grading criteria (Idris, 12345678)
 
 ✅ Organized the file structure by adding some files in gitignore and put the test cases python file outside the folder as a sperate file in order to be run easily in Windows.
-
-## Acknowledgments
-
-- Special thanks to everyone who helped during the first sprint developement.
