@@ -1,4 +1,3 @@
-# SE-Sprint01-Team32
 
 # README for Corona Archive
 
