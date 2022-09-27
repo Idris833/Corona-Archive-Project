@@ -1,0 +1,135 @@
+{% extends 'base.html' %} {% block head %} {% endblock %} {% block body %}
+
+<div class="roleRegister">
+  <br />
+  <div class="container card border-dark w-50">
+    <div class="card-header">
+      <h1>{{selectedRole}}'s Registration</h1>
+    </div>
+    {% if selectedRole=='Visitor' %}
+    <form action="{{url_for('register_visitor_data')}}" method="POST">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputName4">Name</label>
+          <input
+            name="name"
+            type="text"
+            class="form-control"
+            id="inputName4"
+            placeholder="Full name"
+            required
+          />
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Email</label>
+          <input
+            name="email"
+            type="email"
+            class="form-control"
+            id="inputEmail4"
+            placeholder="Email"
+            required
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputAddress">Address</label>
+        <input
+          name="address"
+          type="text"
+          class="form-control"
+          id="inputAddress"
+          placeholder="Main St 19"
+          required
+        />
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-8">
+          <label for="inputNumber">Phone number</label>
+          <input
+            name="number"
+            type="number"
+            class="form-control"
+            id="inputNumber"
+            placeholder="01234567890"
+            minlength="11"
+          />
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputStatus">Status</label>
+          <select name="status" id="inputStatus" class="form-control" required>
+            <option>Negative</option>
+            <option>Positive</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="gridCheck"
+            required
+          />
+          <label class="form-check-label" for="gridCheck">
+            Agree to our Terms and Privacy Policy.
+          </label>
+        </div>
+      </div>
+      <div class="card-footer cont-btn">
+        <button type="submit" class="btn btn-primary rounded-pill">
+          Sign-Up
+        </button>
+        </div>
+    </form>
+  </div>
+  {% endif %} 
+  
+  {% if selectedRole=='Place Owner' %}
+    <form action="{{url_for('register_placeOwner_data')}}" method="POST">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputName4">Name</label>
+          <input
+            name="placeName"
+            type="text"
+            class="form-control"
+            id="inputName4"
+            placeholder="Place name"
+            required
+          />
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputAddress4">Address</label>
+          <input
+            name="placeAddress"
+            type="text"
+            class="form-control"
+            id="inputAddress4"
+            placeholder="Main Street 19"
+            required
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="gridCheck"
+            required
+          />
+          <label class="form-check-label" for="gridCheck">
+            Agree to our Terms and Privacy Policy.
+          </label>
+        </div>
+      </div>
+      <div class="card-footer cont-btn">
+        <button type="submit" class="btn btn-primary rounded-pill">
+          Sign-Up
+        </button>
+        </div>
+    </form>
+  </div>
+  {% endif %} {% endblock %}
+</div>

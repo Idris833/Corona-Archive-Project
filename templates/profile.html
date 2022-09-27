@@ -1,0 +1,62 @@
+{% extends 'base.html' %} {% block head %} {% endblock %} {% block body %}
+
+<div class="profilePage">
+  <h4>Hello, {{user}}</h4>
+
+  {% if visitor %}
+  <form action="{{url_for('update_visitor_data')}}" method="POST">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputName4">Name</label>
+        <input
+          name="name"
+          type="text"
+          class="form-control"
+          id="inputName4"
+          value="{{user}}"
+          readonly
+        />
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">Email</label>
+        <input
+          name="email"
+          type="email"
+          class="form-control"
+          id="inputEmail4"
+          value="{{email}}"
+          readonly
+        />
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputAddress">Address</label>
+      <input
+        name="address"
+        type="text"
+        class="form-control"
+        id="inputAddress"
+        value="{{add}}"
+      />
+    </div>
+    <div class="form-group">
+      <label for="inputNumber">Phone number</label>
+      <input
+        name="number"
+        type="number"
+        class="form-control"
+        id="inputNumber"
+        value="{{num}}"
+      />
+    </div>
+    <div class="card-footer cont-btn">
+      <button type="submit" class="btn btn-primary rounded-pill">
+        Update Profile
+      </button>
+    </div>
+  </form>
+
+  {% endif %}
+</div>
+
+{% endblock %}

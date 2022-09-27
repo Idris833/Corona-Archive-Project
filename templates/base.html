@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+
+    {% block head %}{% endblock %}
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-custom-2 navbar-light bg-light">
+      {% if notLoggedIn %}
+      <p>
+        <a class="navbar-brand text-white" href="{{ url_for('login')}}"
+          >Login</a
+        >
+      </p>
+      <p>
+        <a class="navbar-brand text-white" href="{{url_for('register')}}"
+          >Register</a
+        >
+      </p>
+      {% endif %} {% if loggedIn %}
+      <p>
+        <a class="navbar-brand text-white" href="{{url_for('home')}}">Home</a>
+      </p>
+      <p>
+        <a class="navbar-brand text-white" href="{{url_for('logout')}}"
+          >Logout</a
+        >
+      </p>
+      {% endif %}
+      <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <h4>
+              <a
+                class="nav-link text-dark gradient-text"
+                href="javascript:window.location.href=window.location.href"
+                >Corona Archive</a
+              >
+            </h4>
+          </li>
+          {% if loggedIn %}
+          <li class="nav-item">
+            <p>
+              <a class="navbar-brand" href="{{url_for('profile')}}"
+                ><i class="bi bi-gear"></i>
+              </a>
+            </p>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </nav>
+    {% block body %}{% endblock %}
+  </body>
+</html>
