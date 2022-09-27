@@ -143,7 +143,7 @@ Run this code once you are in the environment to execute the unit-testcases
 $ python3 test_sprint2.py
 ```
 
-## Sprint 1 Progress achieved
+## Progress achieved
 
 ✅ Created requirements.txt file, which includes all the required installation.
 
@@ -172,8 +172,6 @@ $ python3 test_sprint2.py
 ✅ Created documentation generation infrastructure using Flask-Selfdoc.
 
 ✅ Added 19 unittests that should all pass on the first run. 
-
-## Sprint 2 Progress achieved
 
 ✅ Fixed bugs related to agent login (sql syntax problem)
 
